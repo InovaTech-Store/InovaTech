@@ -6,6 +6,6 @@ export default defineConfig(({ command }) => {
   return {
     plugins: [react()],
     // Substitua 'nome-do-seu-repositorio' pelo nome real do seu projeto no GitHub
-    base: command === 'build' ? '/https://samuelvaleriano.github.io/InovaTech/' : '/',
+    base: command === 'build' ? '/InovaTech/' : '/',
   }
 })
