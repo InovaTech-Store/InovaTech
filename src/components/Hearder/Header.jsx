@@ -22,7 +22,7 @@ const navigate = useNavigate();
   
         <div className="header-actions">
         {role === 'customer' && (
-<button className="cart-trigger" onClick={onOpenCart}>
+          <button className="cart-trigger" onClick={onOpenCart}>
           <i className="fa-solid fa-cart-shopping"></i>
           {cartCount > 0 && <span className="badge">{cartCount}</span>}
         </button>

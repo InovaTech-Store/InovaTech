@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://samuelvaleriano.github.io/InovaTech/",
+  "homepage": " https://inovatech-store.github.io/InovaTech/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
