@@ -1,0 +1,147 @@
+/* Container que centraliza tudo na tela */
+.container-cadastro {
+    /* height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f4f7f6; /* Um cinza bem claro para destacar o card */
+    /* font-family: 'Poppins', sans-serif;  */
+      position: absolute; 
+  width: 100%;
+  min-height: 100vh; 
+  overflow: hidden;    
+  background-color: #f5f2e7; 
+   align-items: center;
+   justify-content: center;
+  display: flex;      
+  flex-direction: column;
+  z-index: 1;
+}
+.container-cadastro::before {
+  width: 300px;
+  height: 400px;
+  background-color: black; 
+  top: -100px;
+  left: -100px;
+  border-radius: 40% 60% 70% 30% / 40% 40% 60% 60%; 
+  transform: rotate(-15deg);
+}
+.container-cadastro::after {
+  width: 400px;
+  height: 500px;
+  background-color: #007bff; 
+  bottom: -150px;
+  right: -100px;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+.container-cadastro::before,
+.container-cadastro::after {
+  content: "";
+  position: absolute;
+  z-index: -1; 
+}
+
+
+/* Estilo do Título (Mesmo do Login) */
+.container-cadastro h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.container-cadastro h1 strong {
+    color: #3498db;
+    font-weight: 300;
+}
+
+/* Subtítulo informativo */
+.container-cadastro h3 {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 20px;
+    font-weight: 400;
+}
+
+/* Card do Formulário */
+.container-cadastro .form {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px; /* Largura padrão de formulários de login/cadastro */
+}
+
+/* Campos de Input */
+.container-cadastro .form input {
+    padding: 14px;
+    border: 1.5px solid #e1e1e1;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.container-cadastro .form input:focus {
+    border-color: #3498db;
+    outline: none;
+    box-shadow: 0 0 8px rgba(52, 152, 219, 0.2);
+}
+
+/* Botão Principal de Cadastro */
+.btn-cadastrar {
+    padding: 14px;
+    background-color: #2ecc71; /* Verde para diferenciar do Login */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn-cadastrar:hover {
+    background-color: #27ae60;
+}
+
+/* Botão Voltar (Estilo outline) */
+.btn-voltar-cadastro {
+    padding: 12px;
+    background-color: transparent;
+    color: #888;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-voltar-cadastro:hover {
+    background-color: #f9f9f9;
+    color: #333;
+    border-color: #bbb;
+}
+
+/* Link para quem já tem conta */
+.voltar-link {
+    margin-top: 20px;
+    color: #3498db;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.voltar-link:hover {
+    text-decoration: underline;
+}
+
+/* Ajuste no Seletor dentro desta página */
+.container-cadastro .selector-container {
+    margin-bottom: 10px;
+}

@@ -1,0 +1,125 @@
+.form-wrapper {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+
+.product-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label {
+    font-weight: 600;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+input, textarea {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.1);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+
+.btn-submit {
+    background-color: #007bff;
+    color: white;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease;
+    margin-top: 0.5rem;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
+
+.btn-submit:active {
+    transform: scale(0.98);
+}
+.buy-button-cancel {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.buy-button-cancel:hover {
+  background-color: #c82333;
+}
+@media (max-width: 600px) {
+  .form-wrapper {
+    margin: 20px 15px; 
+    padding: 1.5rem;
+    max-width: 100%; 
+  }
+
+  h1 {
+    font-size: 1.5rem; 
+  }
+
+  input, textarea, .btn-submit, .buy-button-cancel {
+    font-size: 16px; 
+    padding: 1rem;   
+  }
+
+  .product-form {
+    gap: 1rem; 
+  }
+
+
+  .button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
+.Toastify__progress-bar {
+    background: #002d5a !important;
+}
+
+
+.Toastify__progress-bar--theme-light {
+    background: #002d5a !important;
+}

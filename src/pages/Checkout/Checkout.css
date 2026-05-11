@@ -1,0 +1,147 @@
+/* Container Principal */
+.checkout-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+}
+
+.checkout-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Grid de Layout */
+.checkout-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr; /* Form maior que o Resumo */
+    gap: 30px;
+    align-items: start;
+}
+
+/* Formulário de Checkout */
+.checkout-form {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+.form-group input, 
+.form-group textarea, 
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus, 
+.form-group select:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+.form-group textarea {
+    height: 80px;
+    resize: none;
+}
+
+/* Resumo do Pedido (Lateral) */
+.checkout-summary {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    position: sticky; /* Mantém o resumo visível ao rolar */
+    top: 20px;
+}
+
+.checkout-summary h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.summary-items {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.summary-items p {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    color: #666;
+    margin: 10px 0;
+}
+
+.checkout-summary hr {
+    border: 0;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.3rem;
+    color: #2c3e50;
+}
+
+/* Botão Concluir */
+.btn-concluir {
+    width: 100%;
+    padding: 15px;
+    background-color: #2ecc71; /* Verde Sucesso */
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn-concluir:hover {
+    background-color: #27ae60;
+    transform: translateY(-2px);
+}
+
+.btn-concluir:active {
+    transform: translateY(0);
+}
+
+/* Responsividade (Para Celulares) */
+@media (max-width: 768px) {
+    .checkout-grid {
+        grid-template-columns: 1fr; /* Uma coluna só */
+    }
+    
+    .checkout-summary {
+        order: -1; /* Resumo aparece antes do form no celular */
+        position: static;
+    }
+}
