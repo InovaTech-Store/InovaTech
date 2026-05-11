@@ -7,7 +7,7 @@ export default function FormProdutos() {
     const { id } = useParams();
     const navigate = useNavigate();
     
-    // URL base da sua API
+    
     const API_URL = "https://69fdcc1830ad0a6fd1c17dca.mockapi.io/produtos";
 
     const [formData, setFormData] = useState({
@@ -17,7 +17,7 @@ export default function FormProdutos() {
         imagem: ''
     });
 
-    // 1. BUSCAR DADOS DO PRODUTO (Caso seja Edição)
+    
     useEffect(() => {
         if (id) {
             fetch(`${API_URL}/${id}`)
@@ -39,14 +39,14 @@ export default function FormProdutos() {
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
-    // 2. SALVAR OU EDITAR NO MOCKAPI
+    
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         const dadosProduto = {
             ...formData,
             preco: parseFloat(formData.preco),
-            // Fallback para imagem padrão se estiver vazio
+            
             imagem: formData.imagem || "https://placehold.co/600x400?text=Sem+Imagem"
         };
 
@@ -54,14 +54,14 @@ export default function FormProdutos() {
             let response;
 
             if (id) {
-                // MODO EDIÇÃO: Usa método PUT
+                
                 response = await fetch(`${API_URL}/${id}`, {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(dadosProduto)
                 });
             } else {
-                // MODO CADASTRO: Usa método POST
+                
                 response = await fetch(API_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },

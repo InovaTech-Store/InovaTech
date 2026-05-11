@@ -9,7 +9,7 @@ export default function ListaProdutos() {
     const navigate = useNavigate();
     const role = sessionStorage.getItem("userRole");
 
-    // Função para buscar produtos
+    
     const carregarProdutos = () => {
         fetch("https://69fdcc1830ad0a6fd1c17dca.mockapi.io/produtos")
             .then(res => res.json())
@@ -20,7 +20,7 @@ export default function ListaProdutos() {
         carregarProdutos();
     }, []);
 
-    // FUNÇÃO PARA EXCLUIR PRODUTO
+    
     const handleExcluir = async (id) => {
         if (window.confirm("Tem certeza que deseja excluir este produto?")) {
             try {
@@ -29,7 +29,7 @@ export default function ListaProdutos() {
                 });
 
                 if (response.ok) {
-                    // Remove da lista localmente para não precisar recarregar a página
+                    
                     setProdutos(produtos.filter(p => p.id !== id));
                     toast.success("Produto removido com sucesso!");
                 } else {
@@ -51,7 +51,7 @@ export default function ListaProdutos() {
                         <li key={produto.id} className="item-produto">
                             <div className="card">
                                 
-                                {/* ÍCONE DE EXCLUIR - APARECE APENAS PARA OWNER */}
+                                
                                 {role === 'owner' && (
                                     <button 
                                         className="btn-excluir-topo" 

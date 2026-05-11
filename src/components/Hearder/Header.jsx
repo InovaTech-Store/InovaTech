@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Header.css";
+import logo from "../../../public/image/logo.png.png";
 import { useNavigate, Link } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 
@@ -13,7 +14,7 @@ const navigate = useNavigate();
     <>
       <header className="cabecalho">
         <div className="logoContainer">
-          <img src="/image/logo.png.png" alt="Logo Inovatech" className="logo" />
+          <img src={logo} alt="Logo Inovatech" className="logo" />
           <h1>INOVATECH<span>ELETRÔNICA</span></h1>
         </div>
         

@@ -1,4 +1,4 @@
-/* Container Principal */
+
 .checkout-container {
     max-width: 1000px;
     margin: 40px auto;
@@ -15,15 +15,15 @@
     letter-spacing: 1px;
 }
 
-/* Grid de Layout */
+
 .checkout-grid {
     display: grid;
-    grid-template-columns: 1.5fr 1fr; /* Form maior que o Resumo */
+    grid-template-columns: 1.5fr 1fr; 
     gap: 30px;
     align-items: start;
 }
 
-/* Formulário de Checkout */
+
 .checkout-form {
     background: #ffffff;
     padding: 25px;
@@ -66,13 +66,13 @@
     resize: none;
 }
 
-/* Resumo do Pedido (Lateral) */
+
 .checkout-summary {
     background: #f8f9fa;
     padding: 25px;
     border-radius: 12px;
     border: 1px solid #e0e0e0;
-    position: sticky; /* Mantém o resumo visível ao rolar */
+    position: sticky; 
     top: 20px;
 }
 
@@ -110,11 +110,11 @@
     color: #2c3e50;
 }
 
-/* Botão Concluir */
+
 .btn-concluir {
     width: 100%;
     padding: 15px;
-    background-color: #2ecc71; /* Verde Sucesso */
+    background-color: #2ecc71; 
     color: white;
     border: none;
     border-radius: 8px;
@@ -134,14 +134,14 @@
     transform: translateY(0);
 }
 
-/* Responsividade (Para Celulares) */
+
 @media (max-width: 768px) {
     .checkout-grid {
-        grid-template-columns: 1fr; /* Uma coluna só */
+        grid-template-columns: 1fr; 
     }
     
     .checkout-summary {
-        order: -1; /* Resumo aparece antes do form no celular */
+        order: -1; 
         position: static;
     }
 }

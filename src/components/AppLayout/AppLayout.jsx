@@ -15,7 +15,7 @@ export default function AppLayout() {
     setCartItems(cartItems.filter((_, i) => i !== index));
   };
 
-  const clearCart = () => setCartItems([]); // Função para limpar após a compra
+  const clearCart = () => setCartItems([]); 
 
   return (
     <>
@@ -24,7 +24,7 @@ export default function AppLayout() {
         onOpenCart={() => setIsCartOpen(true)} 
       />
       
-      {/* O SEGREDO ESTÁ AQUI: Passar tudo no 'context' */}
+     
       <main>
         <Outlet context={{ cartItems, addToCart, clearCart }} />
       </main>

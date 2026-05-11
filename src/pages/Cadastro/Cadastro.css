@@ -1,13 +1,6 @@
-/* Container que centraliza tudo na tela */
+
 .container-cadastro {
-    /* height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #f4f7f6; /* Um cinza bem claro para destacar o card */
-    /* font-family: 'Poppins', sans-serif;  */
+
       position: absolute; 
   width: 100%;
   min-height: 100vh; 
@@ -44,7 +37,7 @@
 }
 
 
-/* Estilo do Título (Mesmo do Login) */
+
 .container-cadastro h1 {
     font-size: 2.5rem;
     color: #333;
@@ -56,7 +49,6 @@
     font-weight: 300;
 }
 
-/* Subtítulo informativo */
 .container-cadastro h3 {
     font-size: 1rem;
     color: #666;
@@ -64,7 +56,7 @@
     font-weight: 400;
 }
 
-/* Card do Formulário */
+
 .container-cadastro .form {
     background: #ffffff;
     padding: 40px;
@@ -74,10 +66,10 @@
     flex-direction: column;
     gap: 15px;
     width: 100%;
-    max-width: 400px; /* Largura padrão de formulários de login/cadastro */
+    max-width: 400px; 
 }
 
-/* Campos de Input */
+
 .container-cadastro .form input {
     padding: 14px;
     border: 1.5px solid #e1e1e1;
@@ -92,10 +84,10 @@
     box-shadow: 0 0 8px rgba(52, 152, 219, 0.2);
 }
 
-/* Botão Principal de Cadastro */
+
 .btn-cadastrar {
     padding: 14px;
-    background-color: #2ecc71; /* Verde para diferenciar do Login */
+    background-color: #2ecc71; 
     color: white;
     border: none;
     border-radius: 8px;
@@ -110,7 +102,7 @@
     background-color: #27ae60;
 }
 
-/* Botão Voltar (Estilo outline) */
+
 .btn-voltar-cadastro {
     padding: 12px;
     background-color: transparent;
@@ -128,7 +120,7 @@
     border-color: #bbb;
 }
 
-/* Link para quem já tem conta */
+
 .voltar-link {
     margin-top: 20px;
     color: #3498db;
@@ -141,7 +133,7 @@
     text-decoration: underline;
 }
 
-/* Ajuste no Seletor dentro desta página */
+
 .container-cadastro .selector-container {
     margin-bottom: 10px;
 }

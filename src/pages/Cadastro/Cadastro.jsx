@@ -7,12 +7,11 @@ import "./Cadastro.css";
 export default function Cadastro() {
     const navigate = useNavigate();
     
-    // Verifica se há um dono logado
+    
     const loggedInRole = sessionStorage.getItem("userRole"); 
     const podeCriarDono = loggedInRole === "owner";
 
-    // ESTADO: Se não for dono, o padrão é 'customer'. 
-    // Se for dono, o seletor controlará esse estado.
+    
     const [perfil, setPerfil] = useState("customer"); 
     const [nome, setNome] = useState("");
     const [email, setEmail] = useState("");
@@ -25,7 +24,7 @@ export default function Cadastro() {
             nome,
             email,
             senha,
-            role: perfil // Aqui vai 'customer' (automático para comum) ou a escolha do dono
+            role: perfil 
         };
 
         try {
@@ -37,7 +36,7 @@ export default function Cadastro() {
 
             if (response.ok) {
                 toast.success(`Usuário ${nome} cadastrado com sucesso!`);
-                // Se for o dono cadastrando, volta para a lista. Se for cliente novo, vai para o login.
+                
                 podeCriarDono ? navigate("/Lista") : navigate("/");
             }
         } catch (error) {
@@ -49,7 +48,7 @@ export default function Cadastro() {
         <div className="container-cadastro">
             <h1>INOVATECH<strong>CADASTRO</strong></h1>
             
-            {/* Lógica solicitada: Seletor só aparece para o DONO logado */}
+            
             {podeCriarDono ? (
                 <>
                     <Selector active={perfil} setActive={setPerfil} />
@@ -92,7 +91,7 @@ export default function Cadastro() {
                 </button>
             </form>
             
-            {/* Link de Login só aparece para quem não está logado como dono */}
+            
             {!podeCriarDono && (
                 <a href="/" className="voltar-link">Já tem conta? Faça login</a>
             )}

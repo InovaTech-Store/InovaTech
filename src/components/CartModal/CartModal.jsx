@@ -8,8 +8,8 @@ export default function CartModal({ isOpen, onClose, cartItems, onRemove }) {
   if (!isOpen) return null;
 
   const handleFinalizar = () => {
-    onClose(); // Fecha o modal
-    navigate("/Checkout"); // Vai para a página de pagamento
+    onClose();
+    navigate("/Checkout"); 
   };
   const total = cartItems.reduce((acc, item) => acc + item.preco, 0);
 
@@ -48,7 +48,7 @@ export default function CartModal({ isOpen, onClose, cartItems, onRemove }) {
           <button
             className="finish-btn"
             disabled={cartItems.length === 0}
-            onClick={handleFinalizar} // Chama a função aqui
+            onClick={handleFinalizar} 
           >
             Finalizar Compra
           </button>

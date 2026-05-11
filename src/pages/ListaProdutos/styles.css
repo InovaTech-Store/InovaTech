@@ -1,4 +1,4 @@
-/* Reset básico para a lista */
+
 .produtos ul {
     list-style: none;
     padding: 0;
@@ -8,7 +8,7 @@
     gap: 2.5rem;
 }
 
-/* Título da Página */
+
 h2 {
     text-align: center;
     color: #222;
@@ -17,14 +17,14 @@ h2 {
     font-size: 2rem;
 }
 
-/* Container da Seção */
+
 .produtos {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 5%;
 }
 
-/* Card de Produto */
+
 .card {
     background: #ffffff;
     border-radius: 16px;
@@ -99,10 +99,24 @@ h2 {
     transition: background 0.3s ease;
 }
 
-.card-body .botao-list:hover {
+.card-body  .botao-list:hover {
     background-color: #0056b3;
 }
-
+.botao-cart {
+    background-color: #2ecc71;
+     width: 100%;
+    margin-bottom: 0.5rem;
+    color: white;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+.botao-cart:hover {
+    background-color: #27ae60;  }
 
 @media (max-width: 600px) {
     .produtos {
@@ -160,12 +174,12 @@ h2 {
     overflow: hidden;
 }
 
-/* Estilo do botão de excluir no topo */
+
 .btn-excluir-topo {
     position: absolute;
     top: 10px;
     right: 10px;
-    background-color: rgba(255, 0, 0, 0.8); /* Vermelho com transparência */
+    background-color: rgba(255, 0, 0, 0.8); 
     color: white;
     border: none;
     border-radius: 50%;
@@ -182,7 +196,7 @@ h2 {
 
 .btn-excluir-topo:hover {
     background-color: rgb(200, 0, 0);
-    transform: scale(1.1); /* Dá um leve aumento ao passar o mouse */
+    transform: scale(1.1); 
 }
 
 .btn-excluir-topo i {

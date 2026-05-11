@@ -157,11 +157,11 @@
   position: absolute;
   top: -8px;
   right: -8px;
-  background-color: #ff4d4d; /* Vermelho vibrante */
+  background-color: #ff4d4d; 
   color: white;
   font-size: 12px;
   font-weight: bold;
   padding: 2px 6px;
   border-radius: 50%;
-  border: 2px solid #111; /* Cor de fundo do header para destacar */
+  border: 2px solid #111; 
 }

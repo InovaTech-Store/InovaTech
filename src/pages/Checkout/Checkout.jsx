@@ -7,7 +7,7 @@ import './Checkout.css';
 
 
 export default function Checkout() {
-    const { cartItems, clearCart } = useOutletContext(); // clearCart é uma boa função ter no AppLayout
+    const { cartItems, clearCart } = useOutletContext(); 
     const navigate = useNavigate();
     
     const [dados, setDados] = useState({
@@ -27,7 +27,7 @@ const handleSubmit = (e) => {
             return;
         }
 
-        // 1. Organizamos os parâmetros
+        
         const templateParams = {
             to_name: dados.nome,
             to_email: dados.email, 
@@ -35,10 +35,10 @@ const handleSubmit = (e) => {
             total_price: total.toFixed(2),
         };
 
-        // Mostra um aviso de "processando" para o usuário não clicar duas vezes
+        
         const idToast = toast.loading("Finalizando seu pedido...");
 
-        // 2. Enviamos o e-mail
+        
         emailjs.send(
             'service_wgodlmm',   
             'template_cr0ikcb',  
@@ -46,7 +46,7 @@ const handleSubmit = (e) => {
             'v9GnQfUkRYKxf8-7p'    
         )
         .then((response) => {
-            // SÓ ENTRA AQUI SE O EMAIL FOR ENVIADO COM SUCESSO
+           
             toast.update(idToast, { 
                 render: `Sucesso! Confirmado para ${dados.email}`, 
                 type: "success", 
@@ -54,11 +54,11 @@ const handleSubmit = (e) => {
                 autoClose: 5000 
             });
 
-            if(clearCart) clearCart(); // Limpa o carrinho
-            navigate('/Lista');        // Redireciona
+            if(clearCart) clearCart(); 
+            navigate('/Lista');        
         })
         .catch((err) => {
-            // ENTRA AQUI SE O EMAIL FALHAR
+            
             console.error("Erro completo do EmailJS:", err);
             console.log("Dados que serão enviados:", dados);
             toast.update(idToast, { 
@@ -75,7 +75,7 @@ const handleSubmit = (e) => {
             <h2>Finalizar seu Pedido</h2>
             
             <div className="checkout-grid">
-                {/* FORMULÁRIO */}
+                
                 <form onSubmit={handleSubmit} className="checkout-form">
                     <div className="form-group">
                         <label>Nome Completo:</label>
@@ -104,7 +104,7 @@ const handleSubmit = (e) => {
                     <button type="submit" className="btn-concluir">Concluir Compra</button>
                 </form>
 
-                {/* RESUMO DO PEDIDO */}
+                
                 <div className="checkout-summary">
                     <h3>Resumo do Pedido</h3>
                     <div className="summary-items">

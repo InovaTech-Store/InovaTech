@@ -6,20 +6,19 @@ import AppLayout from '../src/components/AppLayout/AppLayout';
 import LoginPages from './pages/LoginPages/LoginPages';
 import Checkout from '../src/pages/Checkout/Checkout';
 import Cadastro from './pages/Cadastro/Cadastro';
-import {createBrowserRouter, RouterProvider} from 'react-router-dom'
-const router = createBrowserRouter([
+import {createHashRouter, RouterProvider} from 'react-router-dom'
+const router = createHashRouter([
   {
-    // Rota de Login (SEM Header)
+    
     path: "/", 
     element: <LoginPages />,
   },
   {
-    // Rota de Cadastro (TAMBÉM SEM Header agora)
+   
     path: "/Cadastro",
     element: <Cadastro />,
   },
   {
-    // Grupo de rotas que PRECISAM do Header e Carrinho
     element: <AppLayout />, 
     children: [
       { path: "/Lista", element: <ListaProdutos /> },

@@ -6,16 +6,16 @@ export default function ProductDetail() {
     const { id } = useParams();
     const navigate = useNavigate();
     
-    // Pegamos a função de adicionar ao carrinho do AppLayout
+    
     const { addToCart } = useOutletContext(); 
-    const role = sessionStorage.getItem("userRole"); // Pega o perfil para saber se mostra o botão
+    const role = sessionStorage.getItem("userRole"); 
 
-    // Novos estados para o MockAPI
+    
     const [produto, setProduto] = useState(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Busca apenas o produto com este ID específico lá no MockAPI
+        
         fetch(`https://69fdcc1830ad0a6fd1c17dca.mockapi.io/produtos/${id}`)
             .then((res) => {
                 if (!res.ok) throw new Error("Produto não encontrado");
@@ -32,7 +32,7 @@ export default function ProductDetail() {
             });
     }, [id]);
 
-    // Tela de carregamento enquanto busca na internet
+    
     if (loading) {
         return (
             <div className="container-detail">
@@ -41,7 +41,7 @@ export default function ProductDetail() {
         );
     }
 
-    // Se a busca falhar ou o ID não existir
+    
     if (!produto) {
         return (
             <div className="container-detail">
@@ -51,7 +51,7 @@ export default function ProductDetail() {
         );
     }
 
-    // O MockAPI pode salvar o preço como String, então garantimos que seja Número para fazer as contas
+    
     const precoNumero = Number(produto.preco);
 
     return (
@@ -75,7 +75,7 @@ export default function ProductDetail() {
                         <p className="installments">ou 10x de R$ {(precoNumero / 10).toFixed(2)} sem juros</p>
                     </div>
 
-                    {/* SÓ MOSTRA O BOTÃO DE COMPRAR SE FOR CLIENTE */}
+                    
                     {role === 'customer' && (
                         <button 
                             className="buy-button"
