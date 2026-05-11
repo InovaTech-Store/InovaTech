@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from '../Hearder/Header';
+import Footer from '../Footer/Footer';
 import CartModal from '../CartModal/CartModal';
 
 export default function AppLayout() {
@@ -35,6 +36,8 @@ export default function AppLayout() {
         cartItems={cartItems} 
         onRemove={removeFromCart} 
       />
+      <Footer />
+
     </>
   );
 }

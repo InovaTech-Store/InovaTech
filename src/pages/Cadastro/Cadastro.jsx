@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate , Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import Selector from "../../components/Seletor/Seletor";
 import "./Cadastro.css";
@@ -93,7 +93,7 @@ export default function Cadastro() {
             
             
             {!podeCriarDono && (
-                <a href="/" className="voltar-link">Já tem conta? Faça login</a>
+                <Link to="/" className="voltar-link">Já tem conta? Faça login</Link>
             )}
         </div>
     );
