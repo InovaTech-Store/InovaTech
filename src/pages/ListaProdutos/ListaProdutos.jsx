@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useOutletContext, useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
+import FormatoMoney from '../../components/FormatoMoney/FormatoMoney';
 import './styles.css';
 
 export default function ListaProdutos() {
@@ -66,7 +67,7 @@ export default function ListaProdutos() {
                                 
                                 <div className="card-body">
                                     <h3>{produto.nome}</h3>
-                                    <p className="preco-tag">R$ {Number(produto.preco).toFixed(2)}</p>
+                                    <p className="preco-tag">{FormatoMoney(Number(produto.preco))}</p>
 
                                     <div className="botoes-container">
                                         <button className="botao-list" onClick={() => navigate(`/Detail/${produto.id}`)}>

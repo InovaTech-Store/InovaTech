@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useOutletContext, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import FormatoMoney from '../../components/FormatoMoney/FormatoMoney';
 import emailjs from '@emailjs/browser';
 import './Checkout.css';
 
@@ -32,7 +33,7 @@ const handleSubmit = (e) => {
             to_name: dados.nome,
             to_email: dados.email, 
             address: dados.endereco,
-            total_price: total.toFixed(2),
+            total_price: FormatoMoney(total),
         };
 
         
@@ -109,12 +110,12 @@ const handleSubmit = (e) => {
                     <h3>Resumo do Pedido</h3>
                     <div className="summary-items">
                         {cartItems.map((item, idx) => (
-                            <p key={idx}>{item.nome} - R$ {Number(item.preco).toFixed(2)}</p>
+                            <p key={idx}>{item.nome} - {FormatoMoney(Number(item.preco))}</p>
                         ))}
                     </div>
                     <hr />
                     <div className="summary-total">
-                        <strong>Total: R$ {total.toFixed(2)}</strong>
+                        <strong>Total: {FormatoMoney(total)}</strong>
                     </div>
                 </div>
             </div>

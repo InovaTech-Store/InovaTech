@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import FormatoMoney from "../FormatoMoney/FormatoMoney";
 import "./CartModal.css";
 
 
@@ -30,7 +31,7 @@ export default function CartModal({ isOpen, onClose, cartItems, onRemove }) {
                 <img src={item.imagem} alt={item.nome} />
                 <div className="item-info">
                   <p>{item.nome}</p>
-                  <strong>R$ {item.preco.toFixed(2)}</strong>
+                  <strong>{FormatoMoney(Number(item.preco))}</strong>
                 </div>
                 <button className="remove-btn" onClick={() => onRemove(index)}>
                   <i className="fa-solid fa-trash"></i>
@@ -43,7 +44,7 @@ export default function CartModal({ isOpen, onClose, cartItems, onRemove }) {
         <div className="cart-footer">
           <div className="total-container">
             <span>Total:</span>
-            <strong>R$ {total.toFixed(2)}</strong>
+            <strong>{FormatoMoney(total)}</strong>
           </div>
           <button
             className="finish-btn"
