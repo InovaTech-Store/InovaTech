@@ -6,17 +6,18 @@ import './styles.css';
 export default function FormProdutos() {
     const { id } = useParams();
     const navigate = useNavigate();
-    
+
     const API_URL = "https://69fdcc1830ad0a6fd1c17dca.mockapi.io/produtos";
 
     const [formData, setFormData] = useState({
         nome: '',
         descricao: '',
         preco: '',
-        imagem: ''
+        imagem: '',
+        categoria: 'Celulares'
     });
 
-    const [uploadMode, setUploadMode] = useState('url'); 
+    const [uploadMode, setUploadMode] = useState('url');
 
     useEffect(() => {
         if (id) {
@@ -42,7 +43,7 @@ export default function FormProdutos() {
     const handleFileChange = (e) => {
         const file = e.target.files[0];
         if (file) {
-            if (file.size > 500000) { 
+            if (file.size > 500000) {
                 toast.warning("Imagem muito grande! Tente uma menor para não sobrecarregar o banco.");
             }
 
@@ -96,7 +97,7 @@ export default function FormProdutos() {
         <div className="form-wrapper">
             <h1>{id ? 'Editar Produto' : 'Cadastrar Produto'}</h1>
             <form onSubmit={handleSubmit} className="product-form">
-                
+
                 <div className="form-group">
                     <label htmlFor="nome">Nome do Produto:</label>
                     <input type="text" id="nome" name="nome" value={formData.nome} onChange={handleChange} required />
@@ -105,18 +106,18 @@ export default function FormProdutos() {
 
                 <div className="form-group">
                     <label>Imagem do Produto:</label>
-                    
+
                     <div className="toggle-image-mode">
-                        <button 
-                            type="button" 
-                            className={uploadMode === 'url' ? 'active' : ''} 
+                        <button
+                            type="button"
+                            className={uploadMode === 'url' ? 'active' : ''}
                             onClick={() => setUploadMode('url')}
                         >
                             Link da Internet
                         </button>
-                        <button 
-                            type="button" 
-                            className={uploadMode === 'file' ? 'active' : ''} 
+                        <button
+                            type="button"
+                            className={uploadMode === 'file' ? 'active' : ''}
                             onClick={() => setUploadMode('file')}
                         >
                             Subir do Dispositivo
@@ -152,6 +153,22 @@ export default function FormProdutos() {
                     <label htmlFor="descricao">Descrição:</label>
                     <textarea id="descricao" name="descricao" value={formData.descricao} onChange={handleChange} required />
                 </div>
+                <div className="form-group">
+                    <label htmlFor="categoria">Categoria:</label>
+                    <select
+                        id="categoria"
+                        name="categoria"
+                        value={formData.categoria}
+                        onChange={handleChange}
+                        required
+                    >
+                        <option value="Celulares">Celulares</option>
+                        <option value="Notebooks">Notebooks</option>
+                        <option value="Acessórios">Acessórios</option>
+                        <option value="Games">Games</option>
+                    </select>
+                </div>
+
 
                 <div className="form-group">
                     <label htmlFor="preco">Preço (R$):</label>

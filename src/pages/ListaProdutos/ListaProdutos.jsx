@@ -20,7 +20,7 @@ export default function ListaProdutos() {
     useEffect(() => {
         carregarProdutos();
     }, []);
-
+const categorias = [...new Set(produtos.map(p => p.categoria))];
     
     const handleExcluir = async (id) => {
         if (window.confirm("Tem certeza que deseja excluir este produto?")) {
@@ -45,51 +45,48 @@ export default function ListaProdutos() {
 
     return (
         <div className="container-lista">
-            <h2>Nossos Produtos</h2>
-            <section className="produtos">
-                <ul className="grid-produtos">
-                    {produtos.map((produto) => (
-                        <li key={produto.id} className="item-produto">
-                            <div className="card">
-                                
-                                
-                                {role === 'owner' && (
-                                    <button 
-                                        className="btn-excluir-topo" 
-                                        onClick={() => handleExcluir(produto.id)}
-                                        title="Excluir produto"
-                                    >
-                                        <i className="fa-solid fa-trash-can"></i>
-                                    </button>
-                                )}
-
-                                <img src={produto.imagem} alt={produto.nome} />
-                                
-                                <div className="card-body">
-                                    <h3>{produto.nome}</h3>
-                                    <p className="preco-tag">{FormatoMoney(Number(produto.preco))}</p>
-
-                                    <div className="botoes-container">
-                                        <button className="botao-list" onClick={() => navigate(`/Detail/${produto.id}`)}>
-                                            Ver Detalhes
-                                        </button>
-
-                                        {role === 'customer' ? (
-                                            <button className="botao-cart" onClick={() => addToCart(produto)}>
-                                                <i className="fa-solid fa-cart-plus"></i> Carrinho
-                                            </button>
-                                        ) : (
-                                            <button className="botao-list" onClick={() => navigate(`/Form/${produto.id}`)}>
-                                                Editar
+            <h2>Catálogo InovaTech</h2>
+            
+            {categorias.map(cat => (
+                <div key={cat} className="categoria-section">
+                    <h3 className="titulo-categoria">{cat}</h3>
+                    
+                    <div className="trilho-horizontal">
+                        {produtos
+                            .filter(p => p.categoria === cat)
+                            .map(produto => (
+                                <div key={produto.id} className="item-produto-horizontal">
+                                    <div className="card">
+                                        {role === 'owner' && (
+                                            <button className="btn-excluir-topo" onClick={() => handleExcluir(produto.id)}>
+                                                <i className="fa-solid fa-trash-can"></i>
                                             </button>
                                         )}
+                                        <img src={produto.imagem} alt={produto.nome} />
+                                        <div className="card-body">
+                                            <h3>{produto.nome}</h3>
+                                            <p className="preco-tag">{FormatoMoney(Number(produto.preco))}</p>
+                                            <div className="botoes-container">
+                                                <button className="botao-list" onClick={() => navigate(`/Detail/${produto.id}`)}>
+                                                    Detalhes
+                                                </button>
+                                                {role === 'customer' ? (
+                                                    <button className="botao-cart" onClick={() => addToCart(produto)}>
+                                                        <i className="fa-solid fa-cart-plus"></i>
+                                                    </button>
+                                                ) : (
+                                                    <button className="botao-list" onClick={() => navigate(`/Form/${produto.id}`)}>
+                                                        Editar
+                                                    </button>
+                                                )}
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
-                    ))}
-                </ul>
-            </section>
+                            ))}
+                    </div>
+                </div>
+            ))}
         </div>
     );
 }
