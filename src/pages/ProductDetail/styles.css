@@ -132,15 +132,15 @@
 @media (max-width: 768px) {
   .container-detail {
     padding: 1rem;
-    height: auto; /* Remove a altura fixa no mobile */
-    align-items: flex-start; /* Começa do topo para facilitar o scroll */
+    height: auto; 
+    align-items: flex-start; 
   }
 
   .cardDetail {
-    flex-direction: column; /* Empilha imagem e texto */
-    padding: 1.5rem; /* Reduz o padding interno */
+    flex-direction: column; 
+    padding: 1.5rem; 
     gap: 1.5rem;
-    height: auto; /* Deixa o card crescer conforme o conteúdo */
+    height: auto; 
   }
 
   .image-section {
@@ -149,7 +149,7 @@
 
   .image-section img {
     max-width: 100%;
-    max-height: 300px; /* Reduz o tamanho da imagem no celular */
+    max-height: 300px; 
   }
 
   .info-section {
@@ -157,7 +157,7 @@
   }
 
   .info-section h1 {
-    font-size: 1.5rem; /* Título menor no celular */
+    font-size: 1.5rem; 
     text-align: center;
   }
 
@@ -172,7 +172,7 @@
   }
 
   .price-value {
-    font-size: 1.8rem; /* Preço levemente menor */
+    font-size: 1.8rem; 
     text-align: center;
   }
 
@@ -187,12 +187,12 @@
   }
 
   .buy-button-voltar {
-    width: 100%; /* Botão voltar ocupa a largura toda no mobile */
-    order: 2; /* Opcional: move o botão voltar para baixo de tudo */
+    width: 100%; 
+    order: 2; 
   }
 }
 
-/* Ajuste para telas muito pequenas (iPhone SE, etc) */
+
 @media (max-width: 400px) {
   .info-section h1 {
     font-size: 1.2rem;

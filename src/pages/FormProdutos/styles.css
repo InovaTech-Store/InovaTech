@@ -123,3 +123,37 @@ textarea {
 .Toastify__progress-bar--theme-light {
     background: #002d5a !important;
 }
+.toggle-image-mode {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.toggle-image-mode button {
+    flex: 1;
+    padding: 8px;
+    cursor: pointer;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.toggle-image-mode button.active {
+    background: #007bff;
+    color: white;
+    border-color: #007bff;
+}
+
+.image-preview {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.image-preview img {
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 8px;
+    border: 2px solid #eee;
+}
