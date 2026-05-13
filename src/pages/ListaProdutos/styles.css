@@ -221,7 +221,7 @@ h2 {
     gap: 20px;
     padding: 20px 0;
     scroll-behavior: smooth;
-    -webkit-overflow-scrolling: touch; /
+    -webkit-overflow-scrolling: touch; 
 }
 
 
